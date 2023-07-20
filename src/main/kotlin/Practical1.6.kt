@@ -1,5 +1,4 @@
 fun main() {
-    println("21012011123")
     var a = 111
     var b = 2222
     var c = -222
