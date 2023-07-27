@@ -1,13 +1,23 @@
-fun main(){
-    print("Enter Number: ")
-    var number = readLine()!!.toInt()
-    val factorial = fact(number)
-    println("Factorial of $number = $factorial")
-}
-tailrec fun fact(n: Int, temp: Int = 1): Int{
-    return if (n == 1){
-        temp
-    }else {
-        fact(n-1, temp*n)
+fun factorial(n: Int): Long {
+
+    return if (n == 0) {
+        1
+    } else {
+        n * factorial(n - 1)
     }
 }
+
+fun main() {
+    println("21012011123 | Rutvi")
+    val number=5
+    val result = factorial(number)
+    print("Enter a Number:")
+    val number1 = readLine()!!
+
+
+
+    println("Factorial of $number is: $result")
+    println(" By TailRec Keyword ,Factorial of $number is: $result")
+
+}
+

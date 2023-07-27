@@ -1,57 +1,88 @@
-import java.util.Arrays
+fun main()
+{
+    println("21012011123 | Rutvi")
+    println("Create Array-1 by using arrayof () method:")
+    var arr1 = arrayOf(1,2,3,4,5)
+    //joinToString
+    println(arr1.joinToString())
 
-fun main(){
-    println("Create array using arrayof method:")
-    var a1= arrayOf(10,20,30,40,50,60)
-    println(a1.contentDeepToString())
-    print("Print Using for loop:")
-    for (i in 0..a1.size-1){
-        print(" "+a1[i])
-    }
-    println("\nCreate array using array<>() method:")
-    var a2=Array<Int>(6){0}
-    println(Arrays.deepToString(a2))
+    println("Create Array-2 by using Array<>():")
+    var arr2 = arrayOf<String>("R","S")
+    //contentDeepToString
+    println(arr2.contentDeepToString())
 
-    println("\nCreate array using Array<>() and lamda function:")
-    var a3=Array<Int>(8){i:Int->i}
-    println(Arrays.deepToString(a3))
-
-    println("\nCreate array using IntArray():")
-    var a4=IntArray(5){0}
-    println(a4.contentToString())
-
-    println("\nCreate array using intArrayof():")
-    var a5= intArrayOf(12,51,23,56,84,24)
-    println(a5.joinToString(" "))
-
-    println("\nCreate 2D array using arrayof() and intArrayof():")
-    var a6= arrayOf(intArrayOf(1,5), intArrayOf(5,9), intArrayOf(6,4), intArrayOf(70,15))
-    println(a6.contentDeepToString())
-
-    println("\nCreate array using user input:")
-    println("Enter the values of Array:")
-    var a7= Array<Int>(5){ readLine()!!.toInt() }
-    print("Entered Array is:")
-    println(a7.contentDeepToString())
-
-    println("\nSort array using built-in function:")
-    a7.sort()
-    print("Sorted array is:")
-    println(a7.contentDeepToString())
-
-    println("\nSort array with-out built-in function:")
-    for (i in 0..a7.size-1){
-        for (j in i+1..a7.size-1){
-            var tmp=0
-            if (a7[i]>a7[j]){
-                tmp=a7[i]
-                a7[i]=a7[j]
-                a7[j]=tmp
+    println("Create Array-3 by using Array<>() and lambda function:")
+    var arr3 = Array(8){i:Int->i}
+    println("************Before Sorting Without Built-in Function**************")
+    println(arr3.joinToString())
+    for(i in 0 until arr3.size)
+    {
+        for(j in i+1 until arr3.size)
+        {
+            if(arr3[i]<arr3[j])
+            {
+                arr3[j]=arr3[j]+arr3[i]
+                arr3[i]=arr3[j]-arr3[i]
+                arr3[j]=arr3[j]-arr3[i]
             }
         }
     }
-    print("Sorted array is:" )
-    for (i in 0..a7.size-1) {
-        print(" "+a7[i])
+    println("************After Sorting Without Built-in Function**************")
+    println(arr3.joinToString())
+
+    println("Create Array-4 by using IntArray ():")
+    var arr4 = IntArray(3)
+    //until
+    for(i in 0 until arr4.size)
+    {
+        print("a[$i]: ")
+        arr4[i]= readLine()!!.toInt()
     }
+
+
+    println("Create Array-5 by using intArrayof () :")
+    var arr5 = intArrayOf(25,90,10,35)
+    println("************Before Sorting With Built-in Function**************")
+    println(arr5.joinToString())
+    //Sort
+    arr5.sort()
+    println("************After Sorting With Built-in Function**************")
+    println(arr5.joinToString())
+
+    println("Create 20 Array-6 by using arrayof () and intArrayof() :")
+    var arr6 = arrayOf(intArrayOf(1,2), intArrayOf(3,4,3))
+    for(i in 0 until arr6.size)
+    {
+        for(j in 0 until arr6[i].size)
+        {
+            print(arr6[i][j])
+        }
+        println()
+    }
+
+    //Range
+    val num = 10
+    println("************Use In Range**************")
+    if (num in 5..10) {
+        println("in range")
+    }
+    println("************Use Notin Range**************")
+    if(num !in 5 .. 9)
+    {
+        println("not in range")
+    }
+
+    //step
+    println("************Use Step**************")
+    for (x in 1..10 step 2) {
+        print("$x ")
+    }
+    println()
+
+    //downTo
+    println("************Use downTo**************")
+    for (x in 9 downTo 0 step 3) {
+        print("$x ")
+    }
+    println()
 }
