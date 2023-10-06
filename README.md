@@ -54,7 +54,7 @@ Integer to Double, String to Integer, String to Double.
 8.Create different types of Array as shown in image. Explore Arrays.deepToString(), contentDeepToString() methods, IntArray variable .joinToString()  and use in program to print Array. Explore range, downTo, until etc. for loop and use in this program. Sort Array of Integer data type without using inbuilt function & with using inbuilt function
 
 
-![image](https://github.com/rutviprajapati16/MAD_Practical1_21012011123/assets/97946004/448ab709-3e75-4737-823a-ef198f3083b3)
+<img src="https://github.com/rutviprajapati16/MAD_Practical1_21012011123/assets/97946004/448ab709-3e75-4737-823a-ef198f3083b3" height="500" Width="400">
 
 
 
